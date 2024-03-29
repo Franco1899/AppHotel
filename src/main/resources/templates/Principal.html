@@ -1,0 +1,79 @@
+<link rel="icon" href="/static/rastreo.png" type="image/x-icon">
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Login</title>
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+        <!-- Estilos CSS -->
+        <link rel="stylesheet" href="/static/Principal.css">
+        <!-- Favicon -->
+        <link rel="icon" href="/static/rastreo.png" type="image/x-icon">
+    </head>
+    <body>
+        <main>
+            <article>
+                <section>
+                    <form action="/" method="POST">
+                        <h1>Inicia Sesion</h1>
+                        <img src="/static/facebook.svg" title="Inicia Sesion con Facebook" alt="Inicia Sesion con Facebook">
+                        <img src="/static/instagram.svg" title="Inicia Sesion con Google" alt="Inicia Sesion con Google">
+                        <img src="/static/twitter.svg" title="Inicia Sesion con Twitter" alt="Inicia Sesion con Twitter">
+                        <img src="/static/github.svg" title="Inicia Sesion con GitHub" alt="Inicia Sesion con GitHub">
+
+                        <input type="email" name="email" placeholder="Correo electr&oacute;nico"><br/>
+                        <input type="password" name="password" placeholder="Contrase&ntilde;a"><br/>
+                        <button type="submit">Entrar</button>
+                        <button type="reset">Limpiar</button>
+
+                        <p>Aun no tienes cuenta ?</p>
+                        <p>
+                            <a href="Registro.html">Registrate</a>
+                        </p>
+                    </form>
+                </section>
+            </article>
+        </main>
+
+        <!-- Animaciones : AOS-->
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+        <!-- Mi Script -->
+        <script src="/static/app.js"></script>
+
+        <script>
+
+            AOS.init({
+                duration: 1200,
+            })
+        </script>
+
+        <script>
+
+            // Obtén la lista de imágenes y el índice actual
+            const images = document.querySelectorAll('.img-banner');
+            let currentIndex = 0;
+
+            // Función para cambiar la imagen
+            function changeImage() {
+                images.forEach(image => image.style.display = 'none');
+                images[currentIndex].style.display = 'block';
+
+                // Incrementa el índice o reinícialo si alcanza el final
+                currentIndex = (currentIndex + 1) % images.length;
+
+                // Cambia la imagen cada X milisegundos (ajusta según sea necesario)
+                setTimeout(changeImage, 5000); // Cambia cada 5 segundos
+            }
+
+            // Inicia el cambio de imágenes cuando se carga la página
+            window.onload = changeImage;
+        </script>
+
+
+    </body>
+</html>
