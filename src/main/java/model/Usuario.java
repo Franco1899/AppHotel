@@ -1,8 +1,10 @@
 package model;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Collection;
 
 @Entity
 public class Usuario {
@@ -60,5 +62,9 @@ public class Usuario {
         this.email = email;
     }
 
-    // Otros getters y setters según tus necesidades
+    // Método para obtener los roles del usuario
+    public Collection<String> getRoles() {
+        // Aquí deberías implementar la lógica para obtener los roles del usuario
+        return null; // Debes reemplazar esto con la lógica adecuada
+    }
 }

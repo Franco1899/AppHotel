@@ -13,16 +13,22 @@ public class RegistroController {
 
     @GetMapping
     public ModelAndView mostrarFormularioRegistro() {
-        ModelAndView modelAndView = new ModelAndView("Registro");
+        ModelAndView modelAndView = new ModelAndView("registro");
         // Agregar cualquier objeto necesario al modelo
         return modelAndView;
     }
 
     @PostMapping
-    public ModelAndView procesarRegistro(@RequestParam("username") String username,
-                                         @RequestParam("password") String password) {
+    public ModelAndView procesarRegistro(@RequestParam("name") String name,
+                                         @RequestParam("surname") String surname,
+                                         @RequestParam("email") String email,
+                                         @RequestParam("password") String password,
+                                         @RequestParam("password2") String password2) {
         // Procesar la información del formulario y realizar el registro en la base de datos, etc.
-        ModelAndView modelAndView = new ModelAndView("redirect:/inicio");
+        // Aquí debes validar los datos, verificar si el usuario ya existe, etc.
+        // Por simplicidad, asumiré que la validación es exitosa y simplemente redireccionaré al usuario a la página principal.
+
+        ModelAndView modelAndView = new ModelAndView("redirect:/login");
         return modelAndView;
     }
 }

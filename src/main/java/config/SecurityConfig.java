@@ -6,7 +6,9 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import service.UsuarioService;
+import org.springframework.security.core.userdetails.UserDetailsService; // Importa la interfaz UserDetailsService
 
 @Configuration
 @EnableWebSecurity
@@ -15,29 +17,31 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UsuarioService usuarioService;
 
-    public SecurityConfig(UsuarioService usuarioService) {
-        this.usuarioService = usuarioService;
-    }
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/registro").permitAll() // Corregido el antMatchers para que coincida con la ruta en minúsculas
-                .antMatchers("/principal").permitAll() // Corregido el antMatchers para que coincida con la ruta en minúsculas
+                .antMatchers("/registro", "/principal").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/principal")
-                .defaultSuccessUrl("/inicio") // Debes crear la ruta /inicio y manejarla en un controlador
+                .defaultSuccessUrl("/inicio")
                 .permitAll()
                 .and()
                 .logout()
                 .permitAll();
     }
 
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(usuarioService);
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        // Configura el AuthenticationManagerBuilder con el UsuarioService y el PasswordEncoder
+        auth.userDetailsService(usuarioService)
+                .passwordEncoder(passwordEncoder);
     }
 }
+
+
