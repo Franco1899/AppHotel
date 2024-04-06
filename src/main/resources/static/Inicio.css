@@ -15,6 +15,9 @@
   --cultured: hsl(0, 0%, 93%);
   --white: hsl(0, 100%, 100%);
   --onyx: hsl(0, 0%, 27%);
+  --yellow: hsl(43, 100%, 52%)
+  --cyan: hsl(190, 100%, 42%)
+  --pacific-blue: rgb(3, 4, 94);
 
   /**
    * typography
@@ -504,8 +507,8 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 .category-item {
   min-width: 100%;
   display: flex;
-  align-items: center;
-  gap: 10px;
+  flex-direction: column; /* Cambiamos a un diseño de columna */
+  align-items: stretch; /* Alineamos los elementos a lo largo de la columna */
   padding: 15px;
   border: 1px solid var(--cultured);
   border-radius: var(--border-radius-md);
@@ -513,17 +516,27 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 }
 
 .category-img-box {
-  background: var(--cultured);
-  border: 1px solid hsl(0, 0%, 80%);
-  padding: 10px;
-  border-radius: var(--border-radius-sm);
+  flex: 1; /* La imagen ocupará todo el espacio disponible */
+  overflow: hidden; /* Para asegurarse de que la imagen no se salga del contenedor */
+  border-radius: 20px; /* Ajustamos el radio de borde para redondear los bordes */
 }
 
-.category-content-box { width: 100%; }
+
+.category-img-box img {
+  width: 100%; /* Ajustamos el ancho de la imagen al 100% del contenedor */
+  height: auto; /* Permitimos que la altura se ajuste automáticamente */
+  object-fit: cover; /* Para que la imagen cubra todo el contenedor */
+}
+
+.category-content-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
 .category-content-flex {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Centramos horizontalmente el título */
   align-items: center;
   margin-bottom: 10px;
 }
@@ -533,23 +546,28 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   font-size: var(--fs-9);
   font-weight: var(--weight-600);
   text-transform: uppercase;
-}
-
-.category-item-amount {
-  color: var(--sonic-silver);
-  font-size: var(--fs-11);
+  text-align: center; /* Centramos el texto */
 }
 
 .category-btn {
-  color: var(--salmon-pink);
+  color: black;
+  background-color: pacific-blue;
   font-size: var(--fs-9);
   font-weight: var(--weight-500);
   text-transform: capitalize;
+  border: 1px solid var(--salmon-pink); /* Agregamos borde */
+  padding: 8px 16px; /* Ajustamos el relleno */
+  border-radius: 4px; /* Agregamos borde redondeado */
+  text-align: center; /* Centramos el texto */
+  display: inline-block; /* Convertimos en bloque */
+  text-decoration: none; /* Quitamos subrayado */
+  transition: background-color 0.3s, color 0.3s; /* Agregamos transición */
 }
 
-
-
-
+.category-btn:hover {
+  background-color: var(--salmon-pink); /* Cambiamos el fondo al pasar el mouse */
+  color: white; /* Cambiamos el color del texto al pasar el mouse */
+}
 
 /*-----------------------------------*\
   #SIDEBAR
@@ -2187,47 +2205,6 @@ footer {
 
 
   /**
-   * #TESTIMONIALS, CTA & SERVICE
-   */
-
-  .testimonials-box {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-    gap: 30px;
-  }
-
-  .testimonial-card { margin-bottom: 0; }
-
-  .testimonial, .cta-container {
-    min-width: calc(50% - 15px);
-    width: calc(50% - 15px);
-    margin-bottom: 0;
-  }
-
-  .service { width: 100%; }
-
-  .service-container { gap: 0; }
-
-  .service-item {
-    flex-direction: column;
-    text-align: center;
-    min-width: 20%;
-  }
-
-
-
-  /**
-   * #BLOG
-   */
-
-  .blog-card { min-width: calc(33.33% - 20px); }
-
-  .blog-title { --fs-5: 1rem; }
-
-
-
-  /**
    * #FOOTER
    */
 
@@ -2295,45 +2272,6 @@ footer {
   .product-featured .display-number { --fs-5: 1.125rem; }
 
   .product-grid { grid-template-columns: repeat(4, 1fr); }
-
-
-
-  /**
-   * #TESTIMONIALS, CTA, SERVICE
-   */
-
-  .testimonial, .service {
-    min-width: calc(25% - 20px);
-    width: calc(25% - 20px);
-  }
-
-  .cta-container {
-    min-width: calc(50% - 20px);
-    width: calc(50% - 20px);
-    aspect-ratio: unset;
-  }
-
-  .service-container {
-    justify-content: flex-start;
-    gap: 16px;
-    padding: 30px;
-  }
-
-  .service-item {
-    flex-direction: row;
-    text-align: left;
-  }
-
-
-
-  /**
-   * #BLOG
-   */
-
-  .blog { margin-bottom: 50px; }
-
-  .blog-card { min-width: calc(25% - 22.5px); }
-
 
 
   /**
