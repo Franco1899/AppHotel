@@ -11,6 +11,19 @@
     <link rel="stylesheet" href="/static/Inicio.css">
     <!-- Favicon -->
     <link rel="icon" href="/static/rastreo.png" type="image/x-icon">
+    <script>
+        window.addEventListener('load', function() {
+          const sliderContainer = document.querySelector('.slider-container');
+          const sliderItems = document.querySelectorAll('.slider-item');
+          let currentIndex = 0;
+          const containerWidth = sliderContainer.offsetWidth;
+
+          setInterval(function() {
+            currentIndex = (currentIndex + 1) % sliderItems.length;
+            sliderContainer.scrollLeft = currentIndex * containerWidth;
+          }, 7000); // Cambia cada 7 segundos (7000 milisegundos)
+        });
+    </script>
 </head>
 <body>
 
@@ -180,24 +193,6 @@
                                 <a href="#">Casual</a>
                             </li>
 
-                            <li class="panel-list-item">
-                                <a href="#">Sports</a>
-                            </li>
-
-                            <li class="panel-list-item">
-                                <a href="#">Jacket</a>
-                            </li>
-
-                            <li class="panel-list-item">
-                                <a href="#">Sunglasses</a>
-                            </li>
-
-                            <li class="panel-list-item">
-                                <a href="#">
-                                    <img src="./assets/images/mens-banner.jpg" alt="men's fashion" width="250" height="119">
-                                </a>
-                            </li>
-
                         </ul>
 
                         <ul class="dropdown-panel-list">
@@ -213,61 +208,7 @@
                             <li class="panel-list-item">
                                 <a href="#">Casual</a>
                             </li>
-
-                            <li class="panel-list-item">
-                                <a href="#">Perfume</a>
-                            </li>
-
-                            <li class="panel-list-item">
-                                <a href="#">Cosmetics</a>
-                            </li>
-
-                            <li class="panel-list-item">
-                                <a href="#">Bags</a>
-                            </li>
-
-                            <li class="panel-list-item">
-                                <a href="#">
-                                    <img src="./assets/images/womens-banner.jpg" alt="women's fashion" width="250" height="119">
-                                </a>
-                            </li>
-
                         </ul>
-
-                        <ul class="dropdown-panel-list">
-
-                            <li class="menu-title">
-                                <a href="#">Electronics</a>
-                            </li>
-
-                            <li class="panel-list-item">
-                                <a href="#">Smart Watch</a>
-                            </li>
-
-                            <li class="panel-list-item">
-                                <a href="#">Smart TV</a>
-                            </li>
-
-                            <li class="panel-list-item">
-                                <a href="#">Keyboard</a>
-                            </li>
-
-                            <li class="panel-list-item">
-                                <a href="#">Mouse</a>
-                            </li>
-
-                            <li class="panel-list-item">
-                                <a href="#">Microphone</a>
-                            </li>
-
-                            <li class="panel-list-item">
-                                <a href="#">
-                                    <img src="./assets/images/electronics-banner-2.jpg" alt="mouse collection" width="250" height="119">
-                                </a>
-                            </li>
-
-                        </ul>
-
                     </div>
                 </li>
 
@@ -279,19 +220,6 @@
                         <li class="dropdown-item">
                             <a href="#">Shirt</a>
                         </li>
-
-                        <li class="dropdown-item">
-                            <a href="#">Shorts & Jeans</a>
-                        </li>
-
-                        <li class="dropdown-item">
-                            <a href="#">Safety Shoes</a>
-                        </li>
-
-                        <li class="dropdown-item">
-                            <a href="#">Wallet</a>
-                        </li>
-
                     </ul>
                 </li>
 
@@ -304,17 +232,6 @@
                             <a href="#">Dress & Frock</a>
                         </li>
 
-                        <li class="dropdown-item">
-                            <a href="#">Earrings</a>
-                        </li>
-
-                        <li class="dropdown-item">
-                            <a href="#">Necklace</a>
-                        </li>
-
-                        <li class="dropdown-item">
-                            <a href="#">Makeup Kit</a>
-                        </li>
                     </ul>
                 </li>
             </ul>
@@ -1107,33 +1024,6 @@
 
         <div class="container">
 
-            <ul class="footer-nav-list">
-
-                <li class="footer-nav-item">
-                    <h2 class="nav-title">Categorias populares</h2>
-                </li>
-
-                <li class="footer-nav-item">
-                    <a href="#" class="footer-nav-link">Fashion</a>
-                </li>
-
-                <li class="footer-nav-item">
-                    <a href="#" class="footer-nav-link">Electronic</a>
-                </li>
-
-                <li class="footer-nav-item">
-                    <a href="#" class="footer-nav-link">Cosmetic</a>
-                </li>
-
-                <li class="footer-nav-item">
-                    <a href="#" class="footer-nav-link">Health</a>
-                </li>
-
-                <li class="footer-nav-item">
-                    <a href="#" class="footer-nav-link">Watches</a>
-                </li>
-
-            </ul>
 
             <ul class="footer-nav-list">
 
@@ -1145,21 +1035,6 @@
                     <a href="#" class="footer-nav-link">Prices drop</a>
                 </li>
 
-                <li class="footer-nav-item">
-                    <a href="#" class="footer-nav-link">New products</a>
-                </li>
-
-                <li class="footer-nav-item">
-                    <a href="#" class="footer-nav-link">Best sales</a>
-                </li>
-
-                <li class="footer-nav-item">
-                    <a href="#" class="footer-nav-link">Contact us</a>
-                </li>
-
-                <li class="footer-nav-item">
-                    <a href="#" class="footer-nav-link">Sitemap</a>
-                </li>
 
             </ul>
 
@@ -1171,22 +1046,6 @@
 
                 <li class="footer-nav-item">
                     <a href="#" class="footer-nav-link">Delivery</a>
-                </li>
-
-                <li class="footer-nav-item">
-                    <a href="#" class="footer-nav-link">Legal Notice</a>
-                </li>
-
-                <li class="footer-nav-item">
-                    <a href="#" class="footer-nav-link">Terms and conditions</a>
-                </li>
-
-                <li class="footer-nav-item">
-                    <a href="#" class="footer-nav-link">About us</a>
-                </li>
-
-                <li class="footer-nav-item">
-                    <a href="#" class="footer-nav-link">Secure payment</a>
                 </li>
 
             </ul>
@@ -1240,40 +1099,6 @@
 
             <ul class="footer-nav-list">
 
-                <li class="footer-nav-item">
-                    <h2 class="nav-title">Follow Us</h2>
-                </li>
-
-                <li>
-                    <ul class="social-link">
-
-                        <li class="footer-nav-item">
-                            <a href="#" class="footer-nav-link">
-                                <ion-icon name="logo-facebook"></ion-icon>
-                            </a>
-                        </li>
-
-                        <li class="footer-nav-item">
-                            <a href="#" class="footer-nav-link">
-                                <ion-icon name="logo-twitter"></ion-icon>
-                            </a>
-                        </li>
-
-                        <li class="footer-nav-item">
-                            <a href="#" class="footer-nav-link">
-                                <ion-icon name="logo-linkedin"></ion-icon>
-                            </a>
-                        </li>
-
-                        <li class="footer-nav-item">
-                            <a href="#" class="footer-nav-link">
-                                <ion-icon name="logo-instagram"></ion-icon>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
-
             </ul>
 
         </div>
@@ -1287,7 +1112,7 @@
             <img src="/static/imgInicio/formas-pago.png" alt="payment method" class="payment-img">
 
             <p class="copyright">
-                Copyright &copy; <a href="#"><A>Franco Armando</A></a> all rights reserved. /2024
+                Copyright &copy; <a href="#"><A>Franco Armando</A></a> all rights reserved. 2024
             </p>
 
         </div>
