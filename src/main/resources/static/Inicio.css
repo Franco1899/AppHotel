@@ -216,6 +216,18 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   border-radius: var(--border-radius-md);
 }
 
+.bannner {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--yellow);
+    padding: 10px;
+    text-align: center;
+    z-index: 9999;
+}
+
 .search-field::-webkit-search-cancel-button { display: none; }
 
 .search-btn {
@@ -476,7 +488,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 }
 
 .banner-title {
-  color: var(--eerie-black);
+  color: var(--federal-blue);
   font-size: var(--fs-1);
   text-transform: uppercase;
   line-height: 1;
@@ -486,7 +498,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 .banner-text { display: none; }
 
 .banner-btn {
-  background: var(--salmon-pink);
+  background: var(--federal-blue);
   color: var(--white);
   width: max-content;
   font-size: var(--fs-11);

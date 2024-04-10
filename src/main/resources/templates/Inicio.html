@@ -24,6 +24,26 @@
           }, 7000); // Cambia cada 7 segundos (7000 milisegundos)
         });
     </script>
+    <script>
+        function openBannner() {
+            document.getElementById("bannner").style.display = "block";
+        }
+
+        function register() {
+            // Aquí puedes agregar la lógica para el registro
+            alert("Redirigiendo a la página de registro...");
+        }
+
+        function login() {
+            // Aquí puedes agregar la lógica para el inicio de sesión
+            alert("Redirigiendo a la página de inicio de sesión...");
+        }
+
+        function closeBannner() {
+            var banner = document.getElementById('bannner');
+            banner.style.display = 'none';
+        }
+    </script>
 </head>
 <body>
 
@@ -74,8 +94,8 @@
             <div class="header-top-actions">
 
                 <select name="currency">
-                    <option value="ars">ARS &#36;</option>
                     <option value="usd">USD &dollar;</option>
+                    <option value="ars">ARS &#36;</option>
                 </select>
 
                 <select name="language">
@@ -109,13 +129,13 @@
 
             <div class="header-user-actions">
 
-                <button class="action-btn">
+                <button class="action-btn" onclick="openBannner()">
                     <ion-icon name="person-outline"></ion-icon>
                 </button>
 
                 <button class="action-btn">
                     <ion-icon name="heart-outline"></ion-icon>
-                    <span class="count">0</span>
+                    <span class="count">100</span>
                 </button>
 
                 <button class="action-btn">
@@ -123,6 +143,14 @@
                     <span class="count">0</span>
                 </button>
 
+            </div>
+
+            <div class="bannner" id="bannner">
+                <button class="close-btn" onclick="closeBannner()">X</button>
+                <p>¿Quieres registrarte o iniciar sesión?</p>
+                <hr>
+                <center><button onclick="register()">Registrarme</button></center>
+                <center><button onclick="login()">Iniciar sesión</button></center>
             </div>
 
         </div>

@@ -15,14 +15,14 @@ public class AppHotelApplication {
 
 		Connection connection = null;
 		try {
-			// Paso 1: Cargar el driver JDBC
+			//Carga el driver JDBC
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
-			// Paso 2: Establecer la conexión con la base de datos
+			//Establecer la conexión con la base de datos
 			String url = "jdbc:mysql://localhost:3306/RegistroHotel";
 			String usuario = "root";
-			String contraseña = "root";
-			connection = DriverManager.getConnection(url, usuario, contraseña);
+			String contrasena = "root";
+			connection = DriverManager.getConnection(url, usuario, contrasena);
 
 			System.out.println("Conexión exitosa a la base de datos MySQL");
 
@@ -30,7 +30,7 @@ public class AppHotelApplication {
 		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 		} finally {
-			// Paso 3: Cerrar la conexión
+			//Cerrar la conexión
 			try {
 				if (connection != null) {
 					connection.close();
